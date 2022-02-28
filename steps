@@ -1,0 +1,13 @@
+virtual env
+
+to enable virtual enambe 
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+
+mkvirtualenv carzoneenv
+
+python3 -m pip install Django
+
+
