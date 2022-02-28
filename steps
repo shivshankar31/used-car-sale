@@ -1,13 +1,23 @@
+6: Step 1: 
 virtual env
 
 to enable virtual enambe 
-
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/Devel
+    source /usr/local/bin/virtualenvwrapper.sh
 
 mkvirtualenv carzoneenv
-
 python3 -m pip install Django
+
+7: Step 2: create sample hello world
+
+8: step 3: create git repo
+    Git Enable:
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git branch -M master
+    git remote add origin https://github.com/shivshankar31/used-car-sale.git
+    git push -u origin master
 
 
