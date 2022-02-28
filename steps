@@ -19,5 +19,6 @@ python3 -m pip install Django
     git branch -M master
     git remote add origin https://github.com/shivshankar31/used-car-sale.git
     git push -u origin master
+    Add gitignore file, generate from https://www.toptal.com/developers/gitignore, add all media folders and files
 
 
