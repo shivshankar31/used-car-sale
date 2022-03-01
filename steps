@@ -32,6 +32,7 @@ step 4.2: In settings.py, add below commands to add static folder to django.
 step 4.3: run the command  "python3 manage.py collectstatic", so django will automatically create static folder and save in root folder.
 TIPS: python3 manage.py --help - will show all avaliable commands
 step 4.4: wrap all src into {%static ' ' %}, which includes files in js, img, fonts. for some of the images we will be adding to database insted of static folder.
- 
 
+10: step 5: add base html file
+step 5.1: create a base html file and copy main header and all js files 
 
