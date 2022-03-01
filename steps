@@ -21,4 +21,17 @@ python3 -m pip install Django
     git push -u origin master
     Add gitignore file, generate from https://www.toptal.com/developers/gitignore, add all media folders and files
 
+9: step 4: Home and static file 
+step 4.1: create static folder in the base project folder and move all static files 
+step 4.2: In settings.py, add below commands to add static folder to django.
+    STATIC_URL = 'static/'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'carzoneproj/static'),
+]
+step 4.3: run the command  "python3 manage.py collectstatic", so django will automatically create static folder and save in root folder.
+TIPS: python3 manage.py --help - will show all avaliable commands
+step 4.4: wrap all src into {%static ' ' %}, which includes files in js, img, fonts. for some of the images we will be adding to database insted of static folder.
+ 
+
 
