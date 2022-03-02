@@ -36,3 +36,10 @@ step 4.4: wrap all src into {%static ' ' %}, which includes files in js, img, fo
 10: step 5: add base html file
 step 5.1: create a base html file and copy main header and all js files 
 
+11,12,13: step 6: create base,footer,nav, about,services,contact
+step 6.1: create include folder in templates and create base,footer,nav html files
+step 6.2: call all above created files in base html file
+step 6.3: create about, services and contact html page and copy the code from the theam.
+step 6.4: user {% extends 'base.html' %} also {% load static %} in all the above created files
+step 6.5: fix all bits and pices 
+
