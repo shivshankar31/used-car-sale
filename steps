@@ -43,3 +43,30 @@ step 6.3: create about, services and contact html page and copy the code from th
 step 6.4: user {% extends 'base.html' %} also {% load static %} in all the above created files
 step 6.5: fix all bits and pices 
 
+15: step 7: install and create postgres DB
+step 7.1: install postgres and pgadmin4 using balow commands 
+    $ sudo mkdir /var/lib/pgadmin
+    $ sudo mkdir /var/log/pgadmin
+    $ sudo chown $USER /var/lib/pgadmin
+    $ sudo chown $USER /var/log/pgadmin
+    $ python3 -m venv pgadmin4
+    $ source pgadmin4/bin/activate
+    (pgadmin4) $ pip install pgadmin4
+    (pgadmin4) $ pgadmin4
+
+step 7.2: create superuser and set password 
+    use the below link to learn more to create user and set role
+    https://www.youtube.com/watch?v=-LwI4HMR_Eg
+    sudo su - postgres
+    psql
+    CREATE USER 'username' WITH PASSWORD 'pw';
+
+step 7.3: setting.py change the DB settings
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'carzone_DB',
+    'USER' : 'postgres',
+    'PASSWORD' : '1234',
+    'HOST' : '127.0.0.1',
+    'PORT' : '5050'
+
+
