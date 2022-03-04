@@ -83,6 +83,13 @@ step 8.2: create superuser for admin panel
 step 9.1: in models.py, create team model
 step 9.2: In admin.py, display the created team model
 
+18: step 10: Media file config
+step 10.1: In settings.py, add below code
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+step 10.2: in url.py, add below code
+    static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
 
 
 
