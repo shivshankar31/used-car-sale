@@ -45,6 +45,7 @@ step 6.5: fix all bits and pices
 
 15: step 7: install and create postgres DB
 step 7.1: install postgres and pgadmin4 using balow commands 
+https://unix.stackexchange.com/questions/467873/how-to-install-pgadmin-4-on-linux-mint
     $ sudo mkdir /var/lib/pgadmin
     $ sudo mkdir /var/log/pgadmin
     $ sudo chown $USER /var/lib/pgadmin
@@ -53,6 +54,12 @@ step 7.1: install postgres and pgadmin4 using balow commands
     $ source pgadmin4/bin/activate
     (pgadmin4) $ pip install pgadmin4
     (pgadmin4) $ pgadmin4
+
+    Desktop version installation command - we have used second method
+    curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+    sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/focal/ pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+    sudo apt install pgadmin4
+
 
 step 7.2: create superuser and set password 
     use the below link to learn more to create user and set role
@@ -67,6 +74,16 @@ step 7.3: setting.py change the DB settings
     'USER' : 'postgres',
     'PASSWORD' : '1234',
     'HOST' : '127.0.0.1',
-    'PORT' : '5050'
+
+16: step 8: create superuser 
+step 8.1: makemigrations and migrate
+step 8.2: create superuser for admin panel
+
+17: step 9: create model and config admin panel
+step 9.1: in models.py, create team model
+step 9.2: In admin.py, display the created team model
+
+
+
 
 
