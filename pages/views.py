@@ -1,13 +1,29 @@
 from django.shortcuts import render
 
+from pages.models import Teams
+
 # Create your views here.
 
 # create a sample function
 def home(request):
-    return render(request, 'pages/home.html')
+    team = Teams.objects.all()
+
+    # to dislay team members in home and about page 
+    empl = {
+        'teams' : team
+    }
+
+    return render(request, 'pages/home.html',empl)
 
 def about(request):
-    return render(request, 'pages/about.html')
+    team = Teams.objects.all()
+
+     # to dislay team members in home and about page
+    empl = {
+        'teams' : team
+    }
+
+    return render(request, 'pages/about.html', empl)
 
 def services(request):
     return render(request, 'pages/services.html')
