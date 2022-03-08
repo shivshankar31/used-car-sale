@@ -152,5 +152,15 @@ step 13.6: create urls.py under created app and add the patten
     ]
 now test the page.
 
+25,26: step 14: cars page content, nav bar, logo fix
+step 14.1: In cars.html, (% load static %}, {% extend 'base.html'%} and {%block content %}
+step 14.2: inside block add the cars html code
+step 14.3: fix nav bare style 
+    {% if 'contact' in request.path %}
+    class= "nav-link active"
+    {% else %}
+    class = "nav-link"
+    {% endif %}
+step 14.4: logo fix by adding '../' front of all logo src in app.js
 
     
