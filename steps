@@ -122,4 +122,35 @@ step 11.5: In models.py, redefine save() whenever we upload photo of different s
                 img.thumbnail(new_img)
                 img.save(self.photo.path)  # saving image at the same path
 
+22, 23: step12: nav bar style, read more button config
+step 12.1: dynamicly change footer copy rights year.
+    {% now 'Y'%} - Y for complete year(2022), y for 22 alown
+step 12.2: home page get in touch update href with below 
+    {% url 'contact' %}
+step 12.3: menu bar current page highlater
+    {% if 'contact' in request.path %}
+    class= "nav-link active"
+    {% else %}
+    class = "nav-link"
+    {% endif %}
+step 13.4: add services page to read more
 
+24: step 13: Cars app 
+step 13.1: create cars app
+    python3 manage.py startapp cars
+step 13.2: add to installed app in settings.py
+    'cars.page.CarsConfig',
+step 13.3: add url to main app urls.py
+    path('cars/', include ('cars.urls')),
+step 13.4: In views.py create cars function
+    def cars(request):
+        return render (request, 'cars/cars.html')
+step 13.5: create cars.html file under templet\cars folder
+step 13.6: create urls.py under created app and add the patten
+    urlpatterns = [
+    path('',views.cars, name='cars'),
+    ]
+now test the page.
+
+
+    
