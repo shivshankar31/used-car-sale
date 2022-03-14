@@ -163,4 +163,11 @@ step 14.3: fix nav bare style
     {% endif %}
 step 14.4: logo fix by adding '../' front of all logo src in app.js
 
-    
+
+27, 28: step 15: Car Model and admin panel
+step 15.1: create car class with below fields,
+    car_title, cyty, state, color, model, year, condition, price, description, car_photo, car_photo_1,
+    car_photo_2, car_photo_3, car_photo_4, car_photo_5, features, body_style, engine, transmission, interior
+    miles, doors, passengers, vin_no, millage, fuel_type, no_of_owners, is_featured, created_date
+step 15.2: use choice tuple to create choises.
+step 15.3: configure admin pannel, in admin.py
