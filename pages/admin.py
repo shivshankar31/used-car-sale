@@ -28,7 +28,7 @@ class TeamsAdmin(admin.ModelAdmin):
     
     # to display the fields in admin panel
     list_display = ('id','thumbnail','firstname', 'lastname', 'designation', 'created_date')
-    # list_display_links =('firstname') # helps to make editable by clicking on id and firstname
+    list_display_links =('id','thumbnail','firstname') # helps to make editable by clicking on id and firstname
 
     search_fields = ('firstname', 'designation')
     list_filter = ('designation',)

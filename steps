@@ -171,3 +171,36 @@ step 15.1: create car class with below fields,
     miles, doors, passengers, vin_no, millage, fuel_type, no_of_owners, is_featured, created_date
 step 15.2: use choice tuple to create choises.
 step 15.3: configure admin pannel, in admin.py
+
+29,30,31: step 16: cars admin panel fix
+step 16.1: CKeditor, to make description as rich text
+    from ckeditor.fields import RichTextField
+    RichTextField()
+step 16.2: convert feature to multichoice by importing 
+    from multiselectfield import MultiSelectField
+    features = MultiSelectField(choices=features_choices)
+step 16.3: In admin.py, use the below
+    Fields display in admin panel - list_display = ('id','thumbnail','car_title', 'color','year','fuel_type', 'price','city','created_date', 'is_featured')
+    Fields to edit from front itself - list_editable = ('is_featured',)
+    Fields to display as link - list_display_links = ('id','thumbnail','car_title')
+    fields to include in search box - search_fields = ('car_title', 'color','year','fuel_type')
+    field for filter - list_filter =('city', 'fuel_type','body_style')
+step 16.4:car thumbnail on admin panel use below function
+    def thumbnail(self,object):
+        return format_html('<img src="{}" width="40" style = "border-radius: 40px;" />'.format(object.car_photo.url))
+    thumbnail.short_discription = 'Car Image'
+step 16.5: in views.py modify the views function for cars page to dislay all cars
+    def cars(request):
+        cars = Car.objects.all()
+        car = {
+            'car': cars
+        }
+        return render (request, 'cars/cars.html', car)
+step 16.6: in views.py pages app, to display the is_featured cars add the below 
+    'featured_cars': featured_car 
+
+step 16.7: edit cars.html and homes.html page and add for to display car list
+
+
+
+

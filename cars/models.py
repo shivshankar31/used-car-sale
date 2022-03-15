@@ -1,6 +1,10 @@
+from email.policy import default
 from random import choices
 from django.db import models
 from datetime import datetime
+from ckeditor.fields import RichTextField # for discription rich text 
+from multiselectfield import MultiSelectField 
+
 # import datetime
 
 # Create your models here.
@@ -94,14 +98,14 @@ class Car(models.Model):
     year = models.IntegerField(choices=year_choice)
     congition = models.CharField(max_length=50)
     price = models.IntegerField()
-    description = models.CharField(max_length=100)
+    description = RichTextField(default='None')
     car_photo = models.ImageField(upload_to= 'photo/%Y/%M/%D')
     car_photo1 = models.ImageField(upload_to= 'photo/%Y/%M/%D', blank=True)
     car_photo2 = models.ImageField(upload_to= 'photo/%Y/%M/%D', blank=True)
     car_photo3 = models.ImageField(upload_to= 'photo/%Y/%M/%D', blank=True)
     car_photo4 = models.ImageField(upload_to= 'photo/%Y/%M/%D', blank=True)
     car_photo5 = models.ImageField(upload_to= 'photo/%Y/%M/%D', blank=True)
-    features = models.CharField(choices=features_choices,max_length=50)
+    features = MultiSelectField(choices=features_choices)
     body_style = models.CharField(choices= body_choice ,max_length=50)
     engine = models.CharField(max_length=50)
     trasmission = models.CharField(choices=trasmission_choice, max_length=50)
