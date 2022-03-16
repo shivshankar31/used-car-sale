@@ -133,30 +133,28 @@
                             <a href="car-details.html" class="car-img">
                                 <div class="tag-2">Featured</div>
                                 <div class="price-box">
-                                    <span class="del"><del>$805.00</del></span>
-                                    <br>
-                                    <span>$780.00</span>
+                                    <span>{{ cars.price }}</span>
                                 </div>
-                                <img class="d-block w-100" src="img/car/car-1.jpg" alt="car">
+                                <img class="d-block w-100" src="{{ cars.car_photo.url }}" alt="car" style="min-height : 262px; max-height: 262px;">
                             </a>
                             <div class="carbox-overlap-wrapper">
                                 <div class="overlap-box">
                                     <div class="overlap-btns-area">
                                         <div class="car-magnify-gallery">
-                                            <a href="img/car/car-1.jpg" class="overlap-btn">
+                                            <a href="{{ cars.car_photo1 }}" class="overlap-btn">
                                                 <i class="fa fa-expand"></i>
                                                 <img class="hidden" src="img/car/car-1.jpg">
                                             </a>
-                                            <a href="img/car/car-2.jpg" class="hidden">
+                                            <a href="{{ cars.car_photo2 }}" class="hidden">
                                                 <img class="hidden" src="img/car/car-2.jpg">
                                             </a>
-                                            <a href="img/car/car-3.jpg" class="hidden">
+                                            <a href="{{ cars.car_photo3 }}" class="hidden">
                                                 <img class="hidden" src="img/car/car-3.jpg">
                                             </a>
-                                            <a href="img/car/car-4.jpg" class="hidden">
+                                            <a href="{{ cars.car_photo4 }}" class="hidden">
                                                 <img class="hidden" src="img/car/car-4.jpg">
                                             </a>
-                                            <a href="img/car/car-5.jpg" class="hidden">
+                                            <a href="{{ cars.car_photo5 }}" class="hidden">
                                                 <img class="hidden" src="img/car/car-5.jpg">
                                             </a>
                                         </div>
@@ -166,20 +164,20 @@
                         </div>
                         <div class="detail">
                             <h1 class="title">
-                                <a href="car-details.html">Lamborghini Huracán</a>
+                                <a href="car-details.html">{{ cars.car_title }}</a>
                             </h1>
                             <div class="location">
                                 <a href="car-details.html">
-                                    <i class="flaticon-pin"></i>123 Kathal St. Tampa City,
+                                    <i class="flaticon-pin"></i>{{ cars.city }} , {{ cars.state }} 
                                 </a>
                             </div>
                             <ul class="facilities-list clearfix">
-                                <li>Petrol</li>
-                                <li>4,000 km</li>
-                                <li>Manual</li>
-                                <li>Sport</li>
-                                <li>white</li>
-                                <li>2020</li>
+                                <li>{{ cars.fuel_type }}</li>
+                                <li>{{ cars.millage }} Km</li>
+                                <li>{{ cars.trasmission }}</li>
+                                <li>{{ cars.body_style }}</li>
+                                <li>{{ cars.color }}</li>
+                                <li>{{ cars.year }}</li>
                             </ul>
                         </div>
                     </div>

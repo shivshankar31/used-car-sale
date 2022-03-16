@@ -172,7 +172,7 @@ step 15.1: create car class with below fields,
 step 15.2: use choice tuple to create choises.
 step 15.3: configure admin pannel, in admin.py
 
-29,30,31: step 16: cars admin panel fix
+29,30,31,32: step 16: cars admin panel, featured car in home&cars page
 step 16.1: CKeditor, to make description as rich text
     from ckeditor.fields import RichTextField
     RichTextField()
@@ -199,7 +199,11 @@ step 16.5: in views.py modify the views function for cars page to dislay all car
 step 16.6: in views.py pages app, to display the is_featured cars add the below 
     'featured_cars': featured_car 
 
-step 16.7: edit cars.html and homes.html page and add for to display car list
+step 16.7: edit cars.html and homes.html page and add for loop to display car list
+    to make the cars photo same size add style "style="min-height : 262px; max-height: 262px;""
+
+
+ 
 
 
 
