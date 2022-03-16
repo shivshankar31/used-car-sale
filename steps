@@ -19,7 +19,8 @@ python3 -m pip install Django
     git branch -M master
     git remote add origin https://github.com/shivshankar31/used-car-sale.git
     git push -u origin master
-    Add gitignore file, generate from https://www.toptal.com/developers/gitignore, add all media folders and files
+    Add gitignore file, generate from sre_parse import fix_flags
+from https://www.toptal.com/developers/gitignore, add all media folders and files
 
 9: step 4: Home and static file 
 step 4.1: create static folder in the base project folder and move all static files 
@@ -202,6 +203,16 @@ step 16.6: in views.py pages app, to display the is_featured cars add the below
 step 16.7: edit cars.html and homes.html page and add for loop to display car list
     to make the cars photo same size add style "style="min-height : 262px; max-height: 262px;""
 
+33,34: step17:fix latest car, gallery 
+step 17.1: latest cars in home page, 
+    latest_car = Car.objects.order_by('-created_date')[:6]
+step 17.2: home page gallery using if condition, to fix photo choice issue. 
+    {% if car.car_photo1 %}
+    <a href="{{ cars.car_photo1.url }}" class="overlap-btn">
+        <i class="fa fa-expand"></i>
+        <img class="hidden" src="{{ cars.car_photo1.url }}">
+    </a>
+    {% endif %}
 
  
 

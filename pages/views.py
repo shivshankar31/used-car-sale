@@ -9,11 +9,13 @@ from cars.models import Car
 def home(request):
     team = Teams.objects.all()
     featured_car = Car.objects.order_by('-created_date').filter(is_featured=True)
+    latest_car = Car.objects.order_by('-created_date')[:6]
 
     # to dislay team members in home and about page 
     empl = {
         'teams' : team,
-        'featured_cars': featured_car 
+        'featured_cars': featured_car,
+        'latest_car': latest_car 
     }
 
     return render(request, 'pages/home.html',empl)
