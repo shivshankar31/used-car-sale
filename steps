@@ -19,7 +19,8 @@ python3 -m pip install Django
     git branch -M master
     git remote add origin https://github.com/shivshankar31/used-car-sale.git
     git push -u origin master
-    Add gitignore file, generate from sre_parse import fix_flags
+    Add gitignore file, generate from readline import append_history_file
+from sre_parse import fix_flags
 from https://www.toptal.com/developers/gitignore, add all media folders and files
 
 9: step 4: Home and static file 
@@ -213,6 +214,13 @@ step 17.2: home page gallery using if condition, to fix photo choice issue.
         <img class="hidden" src="{{ cars.car_photo1.url }}">
     </a>
     {% endif %}
+
+35: step 18: humanize adding comma between numbers
+to add comma in (5,000) use humanize 
+step 18.1: in settings.py, add django.contrib.humanize in installed app
+step 18.2:in home.html, add | intcomma,
+    {{car.price | intcomma }}
+    {{car.millage | intcomma }}
 
  
 
