@@ -19,7 +19,8 @@ python3 -m pip install Django
     git branch -M master
     git remote add origin https://github.com/shivshankar31/used-car-sale.git
     git push -u origin master
-    Add gitignore file, generate from readline import append_history_file
+    Add gitignore file, generate from pydoc import pager
+from readline import append_history_file
 from sre_parse import fix_flags
 from https://www.toptal.com/developers/gitignore, add all media folders and files
 
@@ -221,6 +222,16 @@ step 18.1: in settings.py, add django.contrib.humanize in installed app
 step 18.2:in home.html, add | intcomma,
     {{car.price | intcomma }}
     {{car.millage | intcomma }}
+
+37: step 19: car detail page
+step 19.1: create temp car_detail.html file 
+step 19.2: create views in car app
+    def car_detail(request, id):
+        return render (request, 'cars/car_detail.html')
+step 19.3: add url path 
+    path('<int:id>',views.car_detail, name='car_detail')
+step 19.4: in home.html change dynamic url
+    {% url 'car_detail' car.id %}
 
  
 
