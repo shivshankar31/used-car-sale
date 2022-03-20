@@ -114,7 +114,7 @@ step 11.4: in admin.py,
 
 step 11.5: In models.py, redefine save() whenever we upload photo of different size it converts to 300x300 size 
     from PIL import Image
-    from tkinter import Image
+    from tkinter import Image, PhotoImage
     def save(self):
             super().save()  # saving image first
 
@@ -232,6 +232,18 @@ step 19.3: add url path
     path('<int:id>',views.car_detail, name='car_detail')
 step 19.4: in home.html change dynamic url
     {% url 'car_detail' car.id %}
+
+38: step 20: single car detail page
+Step 20.1:In views.py, add inbuilt function and return
+    detail = get_object_or_404(Car,pk=id) # inbuilt function
+    detail = {
+        'detail' : detail,
+    }  
+step 20.2: in car_detail.html, make the changes to display title, photo, price. use if ciondition to display Photo
+step 20.3: describtion use {{ detail.description | safe }} to diaplay clear text with out html tags
+step 20.4: features and side bar 
+      
+
 
  
 
