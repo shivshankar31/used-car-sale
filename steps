@@ -233,7 +233,7 @@ step 19.3: add url path
 step 19.4: in home.html change dynamic url
     {% url 'car_detail' car.id %}
 
-38: step 20: single car detail page
+38, 39: step 20: single car detail page
 Step 20.1:In views.py, add inbuilt function and return
     detail = get_object_or_404(Car,pk=id) # inbuilt function
     detail = {
@@ -242,6 +242,18 @@ Step 20.1:In views.py, add inbuilt function and return
 step 20.2: in car_detail.html, make the changes to display title, photo, price. use if ciondition to display Photo
 step 20.3: describtion use {{ detail.description | safe }} to diaplay clear text with out html tags
 step 20.4: features and side bar 
+
+41: step 21: display all cars in car page with all details
+step 21.1:In cars view,py, call the objects 
+    cars = Car.objects.order_by('-created_date')
+
+        car = {
+            'car': cars,
+        }
+step 21.2: In cars.html, create dynamic display by creating for loop.
+see all the changes in cars.html
+
+
       
 
 

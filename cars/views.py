@@ -5,10 +5,10 @@ from cars.models import Car
 
 def cars(request):
 
-    cars = Car.objects.all()
+    cars = Car.objects.order_by('-created_date')
 
     car = {
-        'car': cars
+        'car': cars,
     }
 
     return render (request, 'cars/cars.html', car)
