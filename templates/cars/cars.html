@@ -96,10 +96,11 @@
                         </div>
                     {% endfor%}
                 </div>
-            
-                <!-- Page navigation start -->
+
+                <!-- Page navigation start 
                 <div class="pagination-box p-box-2 text-center">
                     <nav aria-label="Page navigation example">
+                        {% if car.has_other_pages %}
                         <ul class="pagination">
                             <li class="page-item">
                                 <a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>
@@ -111,11 +112,54 @@
                                 <a class="page-link" href="#"><i class="fa fa-angle-right"></i></a>
                             </li>
                         </ul>
+                        {% endif %}
                     </nav>
                 </div>
             </div>
             <div class="col-lg-4 col-md-12">
-                <div class="sidebar-right">
+                <div class="sidebar-right"> -->
+                    
+            
+                <!-- Page navigation start -->
+                <div class="pagination-box p-box-2 text-center">
+                    <nav aria-label="Page navigation example">
+                        {% if car.has_other_pages %}
+                            <ul class="pagination">
+                                <!-- for previous page arrow left-->
+                                {% if car.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{car.previous_page_number}}"><i class="fa fa-angle-left"></i></a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <a class="page-link"><i class="fa fa-angle-left"></i></a>
+                                    </li>
+                                {% endif %}
+                                <!-- for page numeber -->
+                                {% for i in car.paginator.page_range %}
+                                    {% if car.number == i %}
+                                        <li class="page-item"><a class="page-link active" href="#">{{i}}</a></li>
+                                    {% else %}
+                                        <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+                                <!--for next page right arrow-->
+                                {% if car.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{car.next_page_number}}"><i class="fa fa-angle-right"></i></a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item disabled">
+                                        <a class="page-link"><i class="fa fa-angle-right"></i></a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        {% endif %}
+                    </nav>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="sidebar-right"> 
                     <!-- Advanced search start -->
                     <div class="widget advanced-search2">
                         <h3 class="sidebar-title">Search your desire car</h3>

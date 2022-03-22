@@ -253,6 +253,18 @@ step 21.1:In cars view,py, call the objects
 step 21.2: In cars.html, create dynamic display by creating for loop.
 see all the changes in cars.html
 
+42, 43: step 22: pagination
+https://docs.djangoproject.com/en/4.0/topics/pagination/
+https://docs.djangoproject.com/en/4.0/ref/paginator/
+step 22.1: in views.py, under the function add the below code for pagination 
+    paginator = Paginator(cars, 3) 
+    page = request.GET.get('page')
+    page_car = paginator.get_page(page)
+step 22.2: using the below methods add the dynamic pagination 
+    .has_other_pages
+    .has_previous
+    .paginator.page_range
+    .has_next
 
       
 
