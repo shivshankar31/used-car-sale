@@ -266,6 +266,20 @@ step 22.2: using the below methods add the dynamic pagination
     .paginator.page_range
     .has_next
 
+44, 45: step 23: search box for all page
+step 23.1: create search.html page 
+step 23.2: add new url path 
+    path('search', views.search, name='search'),
+step 23.3: create new search function using GET
+
+    def search(request):
+    search_data = Car.objects.order_by('-created_date')
+    if 'keyword' in request.GET:
+        keyword = request.GET['keyword']
+        if keyword:
+            data = search_data.filter(Q(description__icontains = keyword)|Q(car_title__icontains=keyword))
+    return render(request, 'cars/search.html', {'data': data,})
+step 23.4: in base.html, add the search url {% url 'search' %}
       
 
 
