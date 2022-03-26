@@ -280,7 +280,53 @@ step 23.3: create new search function using GET
             data = search_data.filter(Q(description__icontains = keyword)|Q(car_title__icontains=keyword))
     return render(request, 'cars/search.html', {'data': data,})
 step 23.4: in base.html, add the search url {% url 'search' %}
-      
+
+46, 47:step 24: home page search form and display
+to show the options in home page search form.
+step 24.1: In home view.py, to filter model, city, year and  body_style create quary 
+    model_search = Car.objects.values_list('model', flat=True).distinct()
+    city_search = Car.objects.values_list('city', flat=True).distinct()
+    year_search = Car.objects.values_list('year', flat=True).distinct()
+    body_style_search = Car.objects.values_list('body_style', flat=True).distinct()
+    
+        'model_search': model_search,
+        'year_search': year_search,
+        'city_search': city_search,
+        'body_style_search': body_style_search,
+
+step 24.2: in home .html, remove all static options and use for loop to fetch the options from DB
+to display the cars in cars search page.
+step 24.3: in cars view.py, under search function use if condition to display the exact search 
+
+    if 'year' in request.GET:
+        year = request.GET['year']
+        if year:
+            data = search_data.filter(year__iexact=year)
+    
+    if 'city' in request.GET:
+        city = request.GET['city']
+        if city:
+            data = search_data.filter(city__iexact=city)
+    
+    if 'model' in request.GET:
+        model = request.GET['model']
+        if model:
+            data = search_data.filter(model__iexact=model)
+    
+    if 'body_style' in request.GET:
+        body_style = request.GET['body_style']
+        if body_style:
+            data = search_data.filter(body_style__iexact=body_style)
+
+step 24.4: to filter the price user the name min and max price as mentioned in html,
+    if 'min_price' in request.GET:
+        min_price = request.GET['min_price']
+        max_price = request.GET['max_price']
+        if max_price:
+            data = search_data.filter(price__gte=min_price, price__lte=max_price)
+
+
+
 
 
  
